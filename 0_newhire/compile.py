@@ -37,6 +37,7 @@ for folder in folders:
 
 
 # Create a string containing the links in a <ul> tag
+links.sort()
 link_list = '\n'.join(links)
 link_list = f'<ul>\n{link_list}\n</ul>'
 
