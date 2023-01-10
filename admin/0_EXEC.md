@@ -1,0 +1,14 @@
+# Standup
+- Create DEIT Github
+- Create Discord
+- Create a separate Clickup Workspace & Gant/Calendar Milestones
+- Create Paperform Account
+- Create Spot Reservation Survey
+- Create Followup Payment Processing Forms
+- Create Office Hours Request Context Form
+- Establish Branding
+- Define promo campaigns
+- Create LinkedIn? Begin promotion
+- Create Facebook? Begin promotion
+- Create New Hire Resources
+- Create New Hire Per Topic Quizzes

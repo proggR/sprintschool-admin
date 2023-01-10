@@ -1,0 +1,58 @@
+<h1 id="sprintschool-agile-education-for-a-rapidly-changing-digital-workplace">SprintSchool: Agile Education for a rapidly changing digital workplace</h1>
+<h2 id="thesis">Thesis</h2>
+<p>Hands on project based learning is the best way to learn in software, while experience working in a team is most critical for career development. By leveraging a “fake” company, with “fake” projects, it reduces the risk of mismatched student placements to 0, allowing for students to adopt more hats in a faster pace, while building out their portfolio at the same time. This model will result in both better outcomes, and being Agile, it will naturally be able to adapt to the changing industry on a dime, keeping up with the pace of employment directions better than Colleges/Universities, while providing a deeper understanding for a more affordable price than Bootcamps.</p>
+<h2 id="about-this-repo">About this Repo</h2>
+<p>Core sections of the repo:</p>
+<ul>
+<li><code>web</code>: The website for SprintSchool. Opening <code>index.html</code> in a browser will render it.</li>
+<li><code>github</code>: Github management Terraform codebook to adapt for SprintSchool/FakeCo’s processes</li>
+<li><code>admin</code>: Meta ideation and thought capture space. Process and objective documentation will live here.</li>
+<li><code>0_newhire</code>: The New Hire Crash Course (NHCC) curriculum. Its comprised of:
+<ul>
+<li><code>curriculum.md</code>: An outline of the programs curriculum, including assignments and FakeCo extension courses</li>
+<li><code>build</code>: The compiled HTML files for the program. It contains an <code>index.html</code> that links to all resources.</li>
+<li><code>compile.py</code>: Script used to compile course resources into the <code>build</code> folder. Accepts a numerical course ID to compile single courses. It uses <code>pandoc</code> for Markdown parsing.</li>
+<li><code>Courses</code>: Folders starting with a number and underscore are separate courses. They’re comprised of:
+<ul>
+<li><code>0_learn.md</code>: The curriculum materials</li>
+<li><code>1_execute.md</code>: The assignments</li>
+<li><code>test.md</code>: The final test questions</li>
+<li><code>syllabus.md</code>: The syllabus for the course (note: syllabus2.md is likely going to become syllabus.md)<br />
+</li>
+</ul></li>
+<li><code>keynotes</code>: Contains any presentations for workshops/sessions. Its comprised of:
+<ul>
+<li><code>build</code>: The compiled HTML presentations for the course sessions. It contains an <code>index.html</code> that links to all resources.</li>
+<li><code>compile.py</code>: Script used to compile keynotes into the <code>build</code> folder. Accepts a numerical course ID to compile single courses. It uses <code>marp</code> for Markdown parsing.</li>
+<li><code>Courses</code>: Folders starting with a number and underscore are separate courses. They’re comprised of sessions following the names <code>session1.md</code>, <code>session2.md</code>, etc</li>
+</ul></li>
+</ul></li>
+<li><code>fakeco</code>: Contains FakeCo project outlines, broken into frontend, backend, and infrastructure subprojects.
+<ul>
+<li><code>proj1</code>: Acts as a way to maintain a high level overview of the first FakeCo project’s subprojects. Subprojects include:
+<ul>
+<li><code>app1/serv1/infra1</code>: Home for FakeCo’s first app &amp; service. Will include project outline and PM plan (ie: will be a managed project), including building out the client, server, and devops codebooks separately and then integrating them in the final phase.</li>
+</ul></li>
+<li><code>proj2</code>: Acts as a way to maintain a high level overview of the second FakeCo project’s subprojects. Subprojects include:
+<ul>
+<li><code>app2/serv2/infra2</code>: Home for FakeCo’s second app &amp; service. Will include project outline and PM plan (ie: will be a managed project), including building out the client, server, and devops codebooks separately and then integrating them in the final phase.</li>
+</ul></li>
+<li><code>proj3</code>: Acts as a way to maintain a high level overview of the third FakeCo project’s subprojects. Subprojects include:
+<ul>
+<li><code>app3/serv3/infra3</code>: Home for FakeCo’s third app &amp; service. Will include project outline and PM plan (ie: will be a managed project), including building out the client, server, and devops codebooks separately and then integrating them in the final phase.</li>
+</ul></li>
+<li><code>proj4</code>: Acts as a way to maintain a high level overview of the fourth FakeCo project’s subprojects. Subprojects include:
+<ul>
+<li><code>app4/serv4/infra4</code>: Home for FakeCo’s fourth app &amp; service. Will include project outline and PM plan (ie: will be a managed project), including building out the client, server, and devops codebooks separately and then integrating them in the final phase.</li>
+</ul></li>
+<li><code>proj5</code>: Acts as a way to maintain a high level overview of the fifth FakeCo project’s subprojects. Subprojects include:
+<ul>
+<li><code>app5/serv5/infra5</code>: Home for FakeCo’s fifth app &amp; service. Will include project outline and PM plan (ie: will be a managed project), including building out the client, server, and devops codebooks separately and then integrating them in the final phase.</li>
+</ul></li>
+<li><code>proj6</code>: Acts as a way to maintain a high level overview of the sixth FakeCo project’s subprojects. Subprojects include:
+<ul>
+<li><code>app6/serv6/infra6</code>: Home for FakeCo’s sixth app &amp; service. Will include project outline and PM plan (ie: will be a managed project), including building out the client, server, and devops codebooks separately and then integrating them in the final phase.</li>
+</ul></li>
+<li><code>zany1</code>: Home for ideation of the first hackathon project. Should be bigger in scope, but achievable within a 48 hour hackathon event. Ideally it builds on a successful FakeCo prototype aiming to polish it into a release candidate.</li>
+</ul></li>
+</ul>

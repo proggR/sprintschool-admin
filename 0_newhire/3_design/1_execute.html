@@ -1,0 +1,51 @@
+<h1 id="nhcc103-intro-to-software-design-architecture">NHCC103: Intro To Software Design &amp; Architecture</h1>
+<h2 id="python-greeter-factory-w-interface">Python Greeter Factory W Interface</h2>
+<h3 id="description">Description</h3>
+<p>The example defines an GreeterInterface which contains a single method greet(name) that returns a string. The GreeterFactory class has a dictionary of greeters containing instances of classes that implement the GreeterInterface. The factory has a single method create_greeter(language) that takes a language as input and returns an instance of the appropriate greeter class.</p>
+<p>The factory is then used to create instances of the different greeters, which can then be used to greet a person by name.</p>
+<p>This is a simple example but you could use this factory pattern to instantiate much more complex class and it allows to add or remove new greeters without any modification to the main codebase.</p>
+<h3 id="code">Code</h3>
+<pre><code>
+from typing import List
+
+class GreeterInterface:
+    def greet(self, name: str) -&gt; str:
+        pass
+
+class EnglishGreeter(GreeterInterface):
+    def greet(self, name: str) -&gt; str:
+        return f&quot;Hello, {name}!&quot;
+
+class SpanishGreeter(GreeterInterface):
+    def greet(self, name: str) -&gt; str:
+        return f&quot;¡Hola, {name}!&quot;
+
+class FrenchGreeter(GreeterInterface):
+    def greet(self, name: str) -&gt; str:
+        return f&quot;Bonjour, {name}!&quot;
+
+class GreeterFactory:
+    def __init__(self):
+        self.greeters: Dict[str, GreeterInterface] = {
+            &#39;english&#39;: EnglishGreeter(),
+            &#39;spanish&#39;: SpanishGreeter(),
+            &#39;french&#39;: FrenchGreeter()
+        }
+
+    def create_greeter(self, language: str) -&gt; GreeterInterface:
+        if language in self.greeters:
+            return self.greeters[language]
+        raise ValueError(f&quot;Invalid language: {language}&quot;)
+
+factory = GreeterFactory()
+
+greeter = factory.create_greeter(&#39;english&#39;)
+print(greeter.greet(&#39;John&#39;)) # Output: Hello, John!
+
+greeter = factory.create_greeter(&#39;spanish&#39;)
+print(greeter.greet(&#39;John&#39;)) # Output: ¡Hola, John!
+
+greeter = factory.create_greeter(&#39;french&#39;)
+print(greeter.greet(&#39;John&#39;)) # Output: Bonjour, John!
+
+</code></pre>

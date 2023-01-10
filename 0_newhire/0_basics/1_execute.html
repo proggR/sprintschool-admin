@@ -1,0 +1,66 @@
+<h1 id="nhcc101-assignment">NHCC101 Assignment</h1>
+<h2 id="linux-environment-config-example">Linux Environment Config Example</h2>
+<h3 id="creating-a-.bash_lab-alias-file">Creating a .bash_lab alias file</h3>
+<ul>
+<li>Explanation of what an alias is and why it can be useful</li>
+<li>Example of creating an alias for a frequently used command (e.g. alias ll=‘ls -la’)</li>
+<li>Demonstration of creating a function in the .bash_lab file that performs a more complex task (e.g. a function that creates a new directory and changes into it)</li>
+<li>Explanation of how to source the .bash_lab file in order to use the aliases and functions defined in it</li>
+</ul>
+<h3 id="code">Code</h3>
+<pre><code>#
+alias ll=&#39;ls -la&#39;
+
+newdir () {
+  mkdir $1
+  cd $1
+}</code></pre>
+<h2 id="shell-script-example">Shell Script Example</h2>
+<h3 id="writing-a-shell-script">Writing a shell script</h3>
+<ul>
+<li>Explanation of the purpose and structure of a shell script Demonstration of using variables in a shell script (e.g. assigning a value to a variable and using it in a command)</li>
+<li>Demonstration of creating a function in the shell script that performs a specific task (e.g. a function that takes a directory path as an argument and lists the files in it)</li>
+<li>Explanation of how to make the script executable and run it</li>
+</ul>
+<h3 id="code-1">Code</h3>
+<pre><code>#!/bin/bash
+
+dir_path=$1
+
+list_files() {
+  ls $dir_path
+}
+
+list_files
+</code></pre>
+<h2 id="python-object-example">Python Object Example</h2>
+<h3 id="writing-a-python-script">Writing a Python script</h3>
+<ul>
+<li>Explanation of the purpose and structure of a Python script</li>
+<li>Demonstration of OOP in Python by defining a class and creating instances of that class</li>
+<li>Example of using the class to perform a specific task (e.g. a class that represents a shape and has a method that calculates its area)</li>
+</ul>
+<h3 id="code-2">Code</h3>
+<pre><code>class Shape:
+  def __init__(self, width, height):
+      self.width = width
+      self.height = height
+
+  def area(self):
+      return self.width * self.height
+
+rect = Shape(5, 10)
+print(rect.area())</code></pre>
+<h2 id="git-init-push-example">Git Init &amp; Push Example</h2>
+<h3 id="initializing-and-publishing-a-git-repo">Initializing and publishing a Git repo</h3>
+<ul>
+<li>Explanation of version control and Git</li>
+<li>Demonstration of initializing a Git repo in the project directory and adding the project files to it</li>
+<li>Explanation of how to push the repo to a remote server such as GitHub</li>
+</ul>
+<h3 id="code-3">Code</h3>
+<pre><code>git init
+git add .
+git commit -m &quot;initial commit&quot;
+git remote add origin https://github.com/username/repo-name.git
+git push -u origin master</code></pre>

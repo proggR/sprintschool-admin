@@ -1,0 +1,318 @@
+# Core
+module "core" {
+  source = "./module/team/"
+
+  team-name        = "Core"
+  team-description = ""
+  team-privacy     = "secret"
+
+  team-members = [
+    module.GORRONCharlesEric.login,
+    module.GRAILLONRobin.login,
+    module.JARDINETRemy.login,
+    module.KANIANoel.login,
+    module.SAILLARDDamien.login,
+    module.SAILLARDDamien11.login,
+    module.VEBERArnaud.login,
+    module.PASQUETFabien.login,
+  ]
+
+  team-members_role = {
+    (module.GORRONCharlesEric.login) = "maintainer",
+    (module.GRAILLONRobin.login)     = "maintainer",
+    (module.JARDINETRemy.login)      = "maintainer",
+    (module.KANIANoel.login)         = "maintainer",
+    (module.SAILLARDDamien.login)    = "maintainer",
+    (module.SAILLARDDamien11.login)  = "maintainer",
+    (module.VEBERArnaud.login)       = "maintainer",
+    (module.PASQUETFabien.login)     = "maintainer",
+  }
+
+  team-repositories = [
+    module.github.name,
+    module.api-validator.name,
+    module.amp-jekyll.name,
+    module.black_hole.name,
+    module.blog_eleven-labs_com.name,
+    module.codelabs.name,
+    module.desksharing.name,
+    module.eleven-labs_com.name,
+    module.jekyll-multiple-languages-plugin.name,
+    module.nebula_react.name,
+    module.trainings.name,
+    module.wheel-of-fortune.name,
+    module.typescript-boilerplates.name,
+    module.eslint-config.name,
+    module.design-system.name,
+  ]
+
+  team-repositories_permission = {
+    (module.github.name)                           = "admin",
+    (module.api-validator.name)                    = "admin",
+    (module.amp-jekyll.name)                       = "admin",
+    (module.black_hole.name)                       = "admin",
+    (module.blog_eleven-labs_com.name)             = "admin",
+    (module.codelabs.name)                         = "admin",
+    (module.desksharing.name)                      = "admin",
+    (module.eleven-labs_com.name)                  = "admin",
+    (module.jekyll-multiple-languages-plugin.name) = "admin",
+    (module.nebula_react.name)                     = "admin",
+    (module.trainings.name)                        = "admin",
+    (module.wheel-of-fortune.name)                 = "admin",
+    (module.typescript-boilerplates.name)          = "admin",
+    (module.eslint-config.name)                    = "admin",
+    (module.design-system.name)                    = "admin",
+  }
+}
+
+# Developers
+module "developers" {
+  source = "./module/team/"
+
+  team-name        = "Developers"
+  team-description = ""
+  team-privacy     = "closed"
+
+  team-members = [
+    module.ALLIERAlexandre.login,
+    module.AMARAAntoine.login,
+    module.ANDREAlexandre.login,
+    module.BELETFabiola.login,
+    module.BERNARDJeremy.login,
+    module.BERTHETJeanBaptiste.login,
+    module.BESSOUDOSebastien.login,
+    module.BETHMONTThomas.login,
+    module.BOILLONYannick.login,
+    module.BOUCQUETOTYann.login,
+    module.BRENOTPierre.login,
+    module.CADOUXMartin.login,
+    module.CANALGuillem.login,
+    module.CHARDENALMatthieu.login,
+    module.CHARRONMaeva.login,
+    module.CIEPKAJeanBaptiste.login,
+    module.CLAVIERAnais.login,
+    module.CORDIERKevin.login,
+    module.COURBORenaud.login,
+    module.DEBANDTJulien.login,
+    module.DELPEYROUXVictor.login,
+    module.DEMELLIERRomain.login,
+    module.DIOURIYounes.login,
+    module.DUNGKevin.login,
+    module.DUVALDavid.login,
+    module.EINHORNStephane.login,
+    module.FEIREISENBenjamin.login,
+    module.FERTDimitri.login,
+    module.FLORANTLoris.login,
+    module.FRUITDimitri.login,
+    module.GHERBIYamin.login,
+    module.GORRONCharlesEric.login,
+    module.GRAILLONRobin.login,
+    module.GREVINNicolas.login,
+    module.JACQUEMINArthur.login,
+    module.JARDINETRemy.login,
+    module.JOSEPHMarianne.login,
+    module.KANIANoel.login,
+    module.KONTOMARKOSSophie.login,
+    module.LABIEDHKaies.login,
+    module.LANAUGregory.login,
+    module.LENGLETMartin.login,
+    module.LEROUGEPierre.login,
+    module.LOVERGNEClement.login,
+    module.MAVILLAZRemi.login,
+    module.MIGEOTDEBARANFabrice.login,
+    module.MINASYANMarie.login,
+    module.MOATIJacques.login,
+    module.MOUTTEAnthony.login,
+    module.MULEZIGuillaume.login,
+    module.NAULINThomas.login,
+    module.NICOLAIEAlexandre.login,
+    module.OUNALLIMarwa.login,
+    module.PASQUETFabien.login,
+    module.PEAUDECERFMarion.login,
+    module.PIERRELOUISMatthieu.login,
+    module.POINTURIERLucas.login,
+    module.RAMEAUBenoit.login,
+    module.REGAIBIIlyace.login,
+    module.SAILLARDDamien.login,
+    module.SAILLARDDamien11.login,
+    module.SOLOMEmmanuel.login,
+    module.SURPierre.login,
+    module.THIBAULTGuillaume.login,
+    module.THUONThierry.login,
+    module.TRAPANIMariaEugenia.login,
+    module.VEBERArnaud.login,
+    module.XUAlexandre.login,
+  ]
+
+  team-members_role = {
+    (module.ALLIERAlexandre.login)      = "member",
+    (module.AMARAAntoine.login)         = "member",
+    (module.ANDREAlexandre.login)       = "member",
+    (module.BELETFabiola.login)         = "member",
+    (module.BERNARDJeremy.login)        = "member",
+    (module.BERTHETJeanBaptiste.login)  = "member",
+    (module.BESSOUDOSebastien.login)    = "member",
+    (module.BETHMONTThomas.login)       = "member",
+    (module.BOILLONYannick.login)       = "member",
+    (module.BOUCQUETOTYann.login)       = "member",
+    (module.BRENOTPierre.login)         = "member",
+    (module.CADOUXMartin.login)         = "member",
+    (module.CANALGuillem.login)         = "member",
+    (module.CHARDENALMatthieu.login)    = "member",
+    (module.CHARRONMaeva.login)         = "member",
+    (module.CIEPKAJeanBaptiste.login)   = "member",
+    (module.CLAVIERAnais.login)         = "member",
+    (module.CORDIERKevin.login)         = "member",
+    (module.COURBORenaud.login)         = "member",
+    (module.DEBANDTJulien.login)        = "member",
+    (module.DELPEYROUXVictor.login)     = "member",
+    (module.DEMELLIERRomain.login)      = "member",
+    (module.DIOURIYounes.login)         = "member",
+    (module.DUNGKevin.login)            = "member",
+    (module.DUVALDavid.login)           = "member",
+    (module.EINHORNStephane.login)      = "member",
+    (module.FEIREISENBenjamin.login)    = "member",
+    (module.FERTDimitri.login)          = "member",
+    (module.FLORANTLoris.login)         = "member",
+    (module.FRUITDimitri.login)         = "member",
+    (module.GHERBIYamin.login)          = "member",
+    (module.GORRONCharlesEric.login)    = "maintainer",
+    (module.GRAILLONRobin.login)        = "maintainer",
+    (module.GREVINNicolas.login)        = "member",
+    (module.JACQUEMINArthur.login)      = "member",
+    (module.JARDINETRemy.login)         = "maintainer",
+    (module.JOSEPHMarianne.login)       = "member",
+    (module.KANIANoel.login)            = "maintainer",
+    (module.KONTOMARKOSSophie.login)    = "member",
+    (module.LABIEDHKaies.login)         = "member",
+    (module.LANAUGregory.login)         = "member",
+    (module.LENGLETMartin.login)        = "member",
+    (module.LEROUGEPierre.login)        = "member",
+    (module.LOVERGNEClement.login)      = "member",
+    (module.MAVILLAZRemi.login)         = "member",
+    (module.MIGEOTDEBARANFabrice.login) = "member",
+    (module.MINASYANMarie.login)        = "member",
+    (module.MOATIJacques.login)         = "member",
+    (module.MOUTTEAnthony.login)        = "member",
+    (module.MULEZIGuillaume.login)      = "member",
+    (module.NAULINThomas.login)         = "member",
+    (module.NICOLAIEAlexandre.login)    = "member",
+    (module.OUNALLIMarwa.login)         = "member",
+    (module.PASQUETFabien.login)        = "maintainer",
+    (module.PEAUDECERFMarion.login)     = "member",
+    (module.PIERRELOUISMatthieu.login)  = "member",
+    (module.POINTURIERLucas.login)      = "member",
+    (module.RAMEAUBenoit.login)         = "member",
+    (module.REGAIBIIlyace.login)        = "member",
+    (module.SAILLARDDamien.login)       = "maintainer",
+    (module.SAILLARDDamien11.login)     = "maintainer",
+    (module.SOLOMEmmanuel.login)        = "member",
+    (module.SURPierre.login)            = "member",
+    (module.THIBAULTGuillaume.login)    = "member",
+    (module.THUONThierry.login)         = "member",
+    (module.TRAPANIMariaEugenia.login)  = "member",
+    (module.VEBERArnaud.login)          = "maintainer",
+    (module.XUAlexandre.login)          = "member",
+  }
+
+  team-repositories = [
+    module.github.name,
+    module.api-validator.name,
+    module.amp-jekyll.name,
+    module.black_hole.name,
+    module.blog_eleven-labs_com.name,
+    module.codelabs.name,
+    module.desksharing.name,
+    module.eleven-labs_com.name,
+    module.jekyll-multiple-languages-plugin.name,
+    module.nebula_react.name,
+    module.trainings.name,
+    module.wheel-of-fortune.name,
+    module.typescript-boilerplates.name,
+    module.eslint-config.name,
+    module.design-system.name,
+  ]
+
+  team-repositories_permission = {
+    (module.github.name)                           = "push",
+    (module.api-validator.name)                    = "push",
+    (module.amp-jekyll.name)                       = "push",
+    (module.black_hole.name)                       = "push",
+    (module.blog_eleven-labs_com.name)             = "push",
+    (module.codelabs.name)                         = "push",
+    (module.desksharing.name)                      = "push",
+    (module.eleven-labs_com.name)                  = "push",
+    (module.jekyll-multiple-languages-plugin.name) = "push",
+    (module.nebula_react.name)                     = "push",
+    (module.trainings.name)                        = "push",
+    (module.wheel-of-fortune.name)                 = "push",
+    (module.typescript-boilerplates.name)          = "push",
+    (module.eslint-config.name)                    = "push",
+    (module.design-system.name)                    = "push",
+  }
+}
+
+# HQ
+module "hq" {
+  source = "./module/team/"
+
+  team-name        = "HQ"
+  team-description = ""
+  team-privacy     = "closed"
+
+  team-members = [
+    module.LALOUMMichael.login,
+    module.AMARBenjamin.login,
+    module.BERRYElsa.login,
+    module.CLAVIERAnais.login,
+    module.DJERRAHSamira.login,
+    module.PEJOUTThomas.login,
+    module.WILSON.login,
+  ]
+
+  team-members_role = {
+    (module.LALOUMMichael.login) = "member",
+    (module.AMARBenjamin.login)  = "member",
+    (module.BERRYElsa.login)     = "member",
+    (module.CLAVIERAnais.login)  = "member",
+    (module.DJERRAHSamira.login) = "member",
+    (module.PEJOUTThomas.login)  = "member",
+    (module.WILSON.login)        = "member",
+  }
+
+  team-repositories = [
+    module.github.name,
+    module.api-validator.name,
+    module.amp-jekyll.name,
+    module.black_hole.name,
+    module.blog_eleven-labs_com.name,
+    module.codelabs.name,
+    module.desksharing.name,
+    module.eleven-labs_com.name,
+    module.jekyll-multiple-languages-plugin.name,
+    module.nebula_react.name,
+    module.trainings.name,
+    module.wheel-of-fortune.name,
+    module.typescript-boilerplates.name,
+    module.eslint-config.name,
+    module.design-system.name,
+  ]
+
+  team-repositories_permission = {
+    (module.github.name)                           = "pull",
+    (module.api-validator.name)                    = "push",
+    (module.amp-jekyll.name)                       = "push",
+    (module.black_hole.name)                       = "push",
+    (module.blog_eleven-labs_com.name)             = "push",
+    (module.codelabs.name)                         = "push",
+    (module.desksharing.name)                      = "push",
+    (module.eleven-labs_com.name)                  = "push",
+    (module.jekyll-multiple-languages-plugin.name) = "push",
+    (module.nebula_react.name)                     = "push",
+    (module.trainings.name)                        = "push",
+    (module.wheel-of-fortune.name)                 = "push",
+    (module.typescript-boilerplates.name)          = "push",
+    (module.eslint-config.name)                    = "push",
+    (module.design-system.name)                    = "push",
+  }
+}
