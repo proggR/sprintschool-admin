@@ -1,5 +1,6 @@
-# NHCC102: Intro To Data Modelling
+# NHCC102: Intro To Data Modelling Assignments
 
+---
 
 ## Python
 
@@ -56,6 +57,8 @@ with open("schema1_data.csv", "w") as file:
     writer.writerows(mapped_data)
 ```
 
+---
+
 ## Postgres
 
 ### Code
@@ -84,6 +87,7 @@ with open("schema1_data.csv", "w") as file:
 
 `\q`
 
+---
 
 ## Normalization
 
@@ -201,9 +205,9 @@ Table: Product_Quantity
 - ProductQuantityStartDate
 - ProductQuantityEndDate
 ```
+---
 
-
-## Python Database Integration
+## CQRS Python Database Integration
 
 ### Code
 

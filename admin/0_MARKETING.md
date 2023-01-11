@@ -5,6 +5,12 @@
 - with instead 15% in the age range and 1% interested, that becomes 105, requiring 11.4% penetration
 - **This person might also have a strong interest in personal development and self-improvement. They may enjoy reading books and articles on productivity, personal finance, and self-help. They might also enjoy fitness and outdoor activities as they balance their time and energy between work and leisure.**
 
+# Possible Go-To-Market Waterfall
+- start a FB and buy well targeted ads blanketing anyone in the idealized demo with multiple campaigns targeting multiple personas. challenge: aim to keep campaign spends cheap but high impression counts.
+- start a FB campaign from DEIT promoting the service and share it from personal to get the ball rolling. might actually have some okay lead gen from that direction, or maybe some reachouts that help find new angles
+- start 2 Twitter accounts, a male and a female, both being bi, that promotes the service. aim to be funny/have characters.
+
+
 ## ChatGPT
 
 ### Personality Profile

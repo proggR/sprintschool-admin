@@ -148,6 +148,7 @@ my_function "World"
 This script declares a variable called my_var and assigns it the value "Hello". It also declares a function called my_function that takes a single parameter and echoes it back. Finally, the script uses the variable and function by printing the value of my_var and calling my_function with the argument "World". When run, this script will output the following:
 
 `Hello`
+
 `World`
 
 This is a simple example of how you can use variables and functions in a shell script. You can use these constructs to store and manipulate data, to organize and reuse code, and to perform complex tasks. By learning and mastering shell scripting, you can automate tasks and manage systems effectively.
@@ -216,6 +217,7 @@ This script defines two functions: square and cube, which calculate the square a
 Finally, the script creates a list of numbers and calls the apply_function function with this list and the square and cube functions as arguments. When run, this script will output the following:
 
 `[1, 4, 9, 16, 25]`
+
 `[1, 8, 27, 64, 125]`
 
 This is an example of how you can use a functional programming approach to design in Python, and how you can use callbacks to pass functions as arguments and execute them dynamically. By using callbacks, you can create flexible and modular programs that can adapt to different scenarios and requirements.

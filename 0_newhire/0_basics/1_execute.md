@@ -1,4 +1,6 @@
-# NHCC101 Assignment
+# NHCC101: Intro To Programming & Linux CLI Assignments
+
+---
 
 ## Linux Environment Config Example
 
@@ -20,6 +22,8 @@ newdir () {
   cd $1
 }
 ```
+
+---
 
 ## Shell Script Example
 
@@ -45,6 +49,9 @@ list_files() {
 list_files
 
 ```
+
+---
+
 ## Python Object Example
 
 ### Writing a Python script
@@ -67,6 +74,8 @@ class Shape:
 rect = Shape(5, 10)
 print(rect.area())
 ```
+
+---
 
 ## Git Init & Push Example
 

@@ -1,4 +1,21 @@
-<h1 id="nhcc102-intro-to-data-modelling">NHCC102: Intro To Data Modelling</h1>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>1_execute</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="gh.css" />
+</head>
+<body>
+<h1 id="nhcc102-intro-to-data-modelling-assignments">NHCC102: Intro To Data Modelling Assignments</h1>
+<hr />
 <h2 id="python">Python</h2>
 <h3 id="code">Code</h3>
 <pre><code>import csv
@@ -50,6 +67,7 @@ with open(&quot;schema1_data.csv&quot;, &quot;w&quot;) as file:
     writer = csv.DictWriter(file, fieldnames=fieldnames)
     writer.writeheader()
     writer.writerows(mapped_data)</code></pre>
+<hr />
 <h2 id="postgres">Postgres</h2>
 <h3 id="code-1">Code</h3>
 <p><code>sudo apt-get install postgresql postgresql-contrib</code></p>
@@ -64,6 +82,7 @@ with open(&quot;schema1_data.csv&quot;, &quot;w&quot;) as file:
 <p><code>INSERT INTO mytable (name, age) VALUES ('John', 25), ('Mary', 35), ('Mike', 30);</code></p>
 <p><code>SELECT * FROM mytable;</code></p>
 <p><code>\q</code></p>
+<hr />
 <h2 id="normalization">Normalization</h2>
 <h3 id="code-2">Code</h3>
 <h4 id="original-dataset">Original Dataset</h4>
@@ -159,7 +178,8 @@ Table: Product_Quantity
 - ProductQuantity
 - ProductQuantityStartDate
 - ProductQuantityEndDate</code></pre>
-<h2 id="python-database-integration">Python Database Integration</h2>
+<hr />
+<h2 id="cqrs-python-database-integration">CQRS Python Database Integration</h2>
 <h3 id="code-3">Code</h3>
 <h4 id="connection-module">Connection Module</h4>
 <pre><code>import os
@@ -236,3 +256,5 @@ def get_all_products():
     conn = engine.connect()
     result = conn.execute(sel)
     return result.fetchall()</code></pre>
+</body>
+</html>

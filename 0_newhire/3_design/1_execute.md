@@ -1,4 +1,6 @@
-# NHCC103: Intro To Software Design & Architecture
+# NHCC103: Intro To Software Design & Architecture Assignments
+
+---
 
 ## Python Greeter Factory W Interface
 

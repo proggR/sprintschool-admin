@@ -1,3 +1,15 @@
+# NHCC107: Intro To Infrastructure & DevOps Assignments
+
+---
+
+## Unit Testing Assignment
+
+### Description
+
+**Objective**: Students will be expected to add unit testing to previously developed Python Auth API, Node.js Chat Server, and React.js Web App projects. The goal of this assignment is to teach students how to implement unit testing in their projects and the benefits of doing so, such as identifying bugs early and ensuring that the code is functioning correctly.
+
+---
+
 ## Unit Testing In Python
 
 ### Code (unittest)
@@ -30,6 +42,8 @@ class TestMathFunctions(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 ```
+
+---
 
 ## Unit Testing In NodeJS
 
@@ -66,6 +80,8 @@ describe('Math functions', () => {
 });
 
 ```
+
+---
 
 ## Unit Testing In ReactJS
 
@@ -111,10 +127,12 @@ describe('MyComponent', () => {
 
 ```
 
+---
+
 ## Publishing to AWS With Terraform
 
 
-### Code 
+### Code
 
 ```
 # Configure the AWS provider

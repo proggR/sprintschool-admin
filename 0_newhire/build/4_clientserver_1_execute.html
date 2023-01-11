@@ -1,1 +1,258 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>1_execute</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="gh.css" />
+</head>
+<body>
+<h1 id="nhcc104-intro-to-client-server-relationships-assignments">NHCC104: Intro To Client-Server Relationships Assignments</h1>
+<hr />
+<h2 id="greeter-python-api">Greeter Python API</h2>
+<h3 id="code">Code</h3>
+<pre><code>from flask import Flask, request, jsonify
+from flask_jwt_extended import JWTManager, create_access_token, get_jwt_identity, jwt_required
 
+app = Flask(__name__)
+app.config[&#39;JWT_SECRET_KEY&#39;] = &#39;mysecretkey&#39;
+jwt = JWTManager(app)
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    password = db.Column(db.String(80), nullable=False)
+
+    def __repr__(self):
+        return &#39;&lt;User %r&gt;&#39; % self.username
+
+class GreeterInterface:
+    def greet(self, name: str) -&gt; str:
+        pass
+
+class EnglishGreeter(GreeterInterface):
+    def greet(self, name: str) -&gt; str:
+        return f&quot;Hello, {name}!&quot;
+
+class SpanishGreeter(GreeterInterface):
+    def greet(self, name: str) -&gt; str:
+        return f&quot;¡Hola, {name}!&quot;
+
+class FrenchGreeter(GreeterInterface):
+    def greet(self, name: str) -&gt; str:
+        return f&quot;Bonjour, {name}!&quot;
+
+class GreeterFactory:
+    def __init__(self):
+        self.greeters: Dict[str, GreeterInterface] = {
+            &#39;english&#39;: EnglishGreeter(),
+            &#39;spanish&#39;: SpanishGreeter(),
+            &#39;french&#39;: FrenchGreeter()
+        }
+
+    def create_greeter(self, language: str) -&gt; GreeterInterface:
+        if language in self.greeters:
+            return self.greeters[language]
+        raise ValueError(f&quot;Invalid language: {language}&quot;)
+
+factory = GreeterFactory()
+
+# Added endpoint for authentication/connection
+@app.route(&#39;/authenticate&#39;, methods=[&#39;POST&#39;])
+def authenticate():
+    # Get the language, username and password from the request
+    language = request.json[&#39;language&#39;]
+    username = request.json[&#39;username&#39;]
+    password = request.json[&#39;password&#39;]
+
+    # Authenticate the user using the database
+    user = User.query.filter_by(username=username, password=password).first()
+    if user:
+        # Generate the JWT token
+        access_token = create_access_token(identity=username)
+        greeter = factory.create_greeter(language)
+        greeting = greeter.greet(username)
+        # Return the JWT token and the greeting in a JSON object
+        return jsonify(access_token=access_token, greeting=greeting)
+    else:
+        return jsonify(message=&quot;Invalid username or password&quot;), 401
+
+# added verify endpoint
+@app.route(&#39;/verify&#39;, methods=[&#39;GET&#39;])
+@jwt_required
+def verify():
+    current_user = get_jwt_identity()
+    return jsonify(logged_in_as=current_user), 200
+
+if __name__ == &#39;__main__&#39;:
+    app.run()</code></pre>
+<hr />
+<h2 id="nodejs-socket-chat-with-verification-hook">NodeJS Socket Chat With Verification Hook</h2>
+<h3 id="code-1">Code</h3>
+<pre><code>const express = require(&#39;express&#39;);
+const app = express();
+const server = require(&#39;http&#39;).Server(app);
+const io = require(&#39;socket.io&#39;)(server);
+const axios = require(&#39;axios&#39;);
+const jwt = require(&#39;jsonwebtoken&#39;);
+
+//const JWT_SECRET = &#39;mysecretkey&#39;;
+const API_URL = &#39;http://localhost:8000/verify&#39;;
+
+io.on(&#39;connection&#39;, (socket) =&gt; {
+    socket.on(&#39;authenticate&#39;, (token) =&gt; {
+        try {
+            // Verify the JWT token (don&#39;t actually, let Python auth server verify it)
+            //const decoded = jwt.verify(token, JWT_SECRET);
+            //console.log(`User authenticated: ${decoded.username}`);
+            // Ping the /verify API endpoint to check the token
+            axios.get(API_URL, { headers: { Authorization: `Bearer ${token}` } })
+            .then((response) =&gt; {
+                // If the token is valid, join the socket to a chat room
+                socket.join(&#39;chatroom&#39;);
+                socket.emit(&#39;authenticated&#39;);
+                socket.on(&#39;chat message&#39;, (msg) =&gt; {
+                    io.to(&#39;chatroom&#39;).emit(&#39;chat message&#39;, msg);
+                });
+            })
+            .catch((error) =&gt; {
+                // If the token is invalid, disconnect the socket
+                console.log(`Error validating token: ${error.response.data.message}`);
+                socket.emit(&#39;unauthorized&#39;, error.response.data.message);
+                socket.disconnect();
+            });
+        } catch (error) {
+            // If the JWT is invalid, disconnect the socket
+            console.log(&#39;Error decoding token:&#39;, error);
+            socket.emit(&#39;unauthorized&#39;, &#39;Invalid token&#39;);
+            socket.disconnect();
+        }
+    });
+});
+
+server.listen(3000, () =&gt; {
+    console.log(&#39;Server listening on port 3000&#39;);
+});
+</code></pre>
+<hr />
+<h2 id="react-chat-client">React Chat Client</h2>
+<h3 id="code-2">Code</h3>
+<pre><code>import React, { useState } from &#39;react&#39;;
+import axios from &#39;axios&#39;;
+import io from &#39;socket.io-client&#39;;
+
+const API_URL = &#39;http://localhost:8000/authenticate&#39;;
+const SOCKET_URL = &#39;http://localhost:3000&#39;;
+
+function Authenticate({ onAuthenticate }) {
+  const [username, setUsername] = useState(&#39;&#39;);
+  const [password, setPassword] = useState(&#39;&#39;);
+  const [language, setLanguage] = useState(&#39;english&#39;);
+  const [error, setError] = useState(null);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    try {
+      const { data } = await axios.post(API_URL, {
+        username,
+        password,
+        language
+      });
+      onAuthenticate(data.access_token);
+    } catch (error) {
+      setError(error.response.data.message);
+    }
+  }
+
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;label&gt;
+        Username:
+        &lt;input type=&quot;text&quot; value={username} onChange={e =&gt; setUsername(e.target.value)} /&gt;
+      &lt;/label&gt;
+      &lt;br /&gt;
+      &lt;label&gt;
+        Password:
+        &lt;input type=&quot;password&quot; value={password} onChange={e =&gt; setPassword(e.target.value)} /&gt;
+      &lt;/label&gt;
+      &lt;br /&gt;
+      &lt;label&gt;
+        Language:
+        &lt;select value={language} onChange={e =&gt; setLanguage(e.target.value)}&gt;
+          &lt;option value=&quot;english&quot;&gt;English&lt;/option&gt;
+          &lt;option value=&quot;spanish&quot;&gt;Spanish&lt;/option&gt;
+          &lt;option value=&quot;french&quot;&gt;French&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/label&gt;
+      &lt;br /&gt;
+      &lt;button type=&quot;submit&quot;&gt;Authenticate&lt;/button&gt;
+      {error &amp;&amp; &lt;p style={{ color: &#39;red&#39; }}&gt;{error}&lt;/p&gt;}
+    &lt;/form&gt;
+  );
+}
+
+function Chat({ token }) {
+  const [messages, setMessages] = useState([]);
+  const [message, setMessage] = useState(&#39;&#39;);
+  const [socket, setSocket] = useState(null);
+
+  if (!token) {
+    return null;
+  }
+
+  if (!socket) {
+    const socket = io(SOCKET_URL, {
+      query: { token },
+      transports: [&#39;websocket&#39;]
+    });
+
+    socket.on(&#39;connect&#39;, () =&gt; {
+      socket.emit(&#39;authenticate&#39;, { token });
+    });
+
+    socket.on(&#39;authenticated&#39;, () =&gt; {
+      setSocket(socket);
+    });
+
+    socket.on(&#39;unauthorized&#39;, (msg) =&gt; {
+      setSocket(null);
+    });
+
+    return &lt;p&gt;Connecting...&lt;/p&gt;;
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    socket.emit(&#39;chat message&#39;, message);
+    setMessage(&#39;&#39;);
+  }
+
+  socket.on(&#39;chat message&#39;, (msg) =&gt; {
+    setMessages(msgs =&gt; [...msgs, msg]);
+  });
+
+  return (
+    &lt;div&gt;
+      &lt;ul&gt;
+        {messages.map((msg, index) =&gt; (
+          &lt;li key={index}&gt;{msg}&lt;/li&gt;
+        ))}
+      &lt;/ul&gt;
+      &lt;form onSubmit={handleSubmit}&gt;
+        &lt;input type=&quot;text&quot; value={message} onChange={e =&gt; setMessage(e.target.value)} /&gt;
+        &lt;button type=&quot;submit&quot;&gt;Send&lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+</body>
+</html>

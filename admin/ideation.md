@@ -133,3 +133,7 @@
 6 cohorts = $9000 = 28 sessions/month
 5000 retained = 4000 to spend = 26 sessions covered @ $150/session for guest trainers
 = 2 sessions/month on me
+
+## Trainer Cert Future Feature
+
+This certificate certifies that the holder, [Name], has demonstrated the necessary experience and qualifications to train new hires in [course/program name]. The holder has completed all required training and has shown a thorough understanding of the subject matter. They have also demonstrated their ability to effectively communicate and teach the material to others. This certificate is granted as evidence of the holder's qualifications and serves as an endorsement of their ability to train new hires in the specified course or program.
