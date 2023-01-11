@@ -206,7 +206,7 @@ Git is a version control system that is used to track changes in software projec
 `git init`
 
 `git add file1.txt file2.txt`
-`git commit -m "Add initial files"``
+`git commit -m "Add initial files"`
 
 `git push origin master`
 `git pull origin master`

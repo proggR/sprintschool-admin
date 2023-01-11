@@ -44,7 +44,7 @@ link_list = '\n'.join(links)
 link_list = f'<ul>\n{link_list}\n</ul>'
 
 # Create the final string that includes the <html> <head> and <body> tags
-html_string = f'<!DOCTYPE html>\n<html>\n\t<head>\n\t\t<title>NHCC Keynotes Index</title>\n\t</head>\n\t<body>\n\t<h1>NHCC Keynotes Index</h1>\n<a href="../../build/index.html">Curriculum Index</a><br/><br/>\t\t{link_list}\n\t</body>\n</html>'
+html_string = f'<!DOCTYPE html>\n<html>\n\t<head>\n\t\t<title>NHCC Keynotes Index</title>\n<link rel="stylesheet" href="gh.css" />\n\t</head>\n\t<body>\n\t<h1>NHCC Keynotes Index</h1>\n<a href="../../../index.html">SprintSchool Dashboard</a><br/><a href="../../build/index.html">Curriculum Index</a><br/><br/>\t\t{link_list}\n\t</body>\n</html>'
 
 # Write the link list to the index.html file
 with open('build/index.html', 'w') as f:

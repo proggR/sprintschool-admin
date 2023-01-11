@@ -1,9 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="gh.css" />
+</head>
+<body>
 <h1 id="sprintschool-agile-education-for-a-rapidly-changing-digital-workplace">SprintSchool: Agile Education for a rapidly changing digital workplace</h1>
 <h2 id="thesis">Thesis</h2>
 <p>Hands on project based learning is the best way to learn in software, while experience working in a team is most critical for career development. By leveraging a “fake” company, with “fake” projects, it reduces the risk of mismatched student placements to 0, allowing for students to adopt more hats in a faster pace, while building out their portfolio at the same time. This model will result in both better outcomes, and being Agile, it will naturally be able to adapt to the changing industry on a dime, keeping up with the pace of employment directions better than Colleges/Universities, while providing a deeper understanding for a more affordable price than Bootcamps.</p>
-<h2 id="about-this-repo">About this Repo</h2>
+<h2 id="working-with-this-repo">Working With This Repo</h2>
+<h3 id="git-preferred">Git (Preferred)</h3>
+<p>If you intend to edit anything, you’ll need to have <code>git</code> installed locally in order to clone the repo.</p>
+<h4 id="install-git">Install Git</h4>
+<p><strong>On Debian Flavored Linux:</strong> <code>sudo apt install git-all</code></p>
+<p><strong>On Windows:</strong> Download the <a href="https://git-scm.com/download/win">Windows Binary</a> and install it. <strong>Note:</strong> audit <a href="https://gitforwindows.org/">GitForWindows</a></p>
+<h4 id="generate-github-personal-access-token-if-you-havent-already">Generate Github Personal Access Token (if you haven’t already)</h4>
+<ul>
+<li><strong>Step 1</strong>: In Github, click your avatar at the top-right followed by <code>Settings</code></li>
+<li><strong>Step 2</strong>: At the very bottom of the left side navigation, click <code>Developer Settings</code></li>
+<li><strong>Step 3</strong>: Click <code>Personal Access Tokens</code> followed by <code>Tokens (classic)</code></li>
+<li><strong>Step 4</strong>: To the right of the page title is <code>Generate New Token</code>. Click that, again opting for <code>classic</code></li>
+<li><strong>Step 5</strong>: Provide a Note/name, select your expiration timeout, and check the box next to <code>repo</code> at the top</li>
+<li><strong>Step 6</strong>: Click <code>Generate token</code> from the bottom, and then copy/save the token it provides for you. You’ll need this</li>
+</ul>
+<h4 id="clone-repo">Clone Repo</h4>
+<p>Open your Terminal/Command prompt and navigate to the folder you want to save the <code>sprintschool-admin</code> directory in.</p>
+<p>Then type: <code>git clone https://github.com/proggR/sprintschool-admin.git</code></p>
+<p>This should prompt you for your username, followed by your password.</p>
+<p><strong>Important Note:</strong> For the password, you’ll need to paste in the personal access token created previously.</p>
+<h4 id="push-changes">Push Changes</h4>
+<p>If you have access to, you can push changes once committed with <code>git push origin main</code>.</p>
+<p>If you lack access, or process dictates no direct pushes, then you can create a <code>Pull Request</code> from the Pull Requests tab on the repo page in Github.</p>
+<p><strong>Important Note:</strong> The pull request method will need documentation.</p>
+<h3 id="zip-read-only">ZIP (Read-Only)</h3>
+<p>Alternatively you can click <code>Code</code> and <code>Download ZIP</code>, and then extract it to where you want locally. This allows you to view the resources, but edits will require the Git method be used.</p>
+<h2 id="repo-structure">Repo Structure</h2>
 <p>Core sections of the repo:</p>
 <ul>
+<li><code>index.html</code>: The Sprint School Admin Dashboard. Links to the local website, curriculum index, keynotes index, and third party services.</li>
+<li><code>gh.css</code>: Provides the CSS to indexes and materials. Currently replicated in both <code>build</code> folders, but should be referenced from 1 spot.</li>
 <li><code>web</code>: The website for SprintSchool. Opening <code>index.html</code> in a browser will render it.</li>
 <li><code>github</code>: Github management Terraform codebook to adapt for SprintSchool/FakeCo’s processes</li>
 <li><code>admin</code>: Meta ideation and thought capture space. Process and objective documentation will live here.</li>
@@ -56,3 +100,5 @@
 <li><code>zany1</code>: Home for ideation of the first hackathon project. Should be bigger in scope, but achievable within a 48 hour hackathon event. Ideally it builds on a successful FakeCo prototype aiming to polish it into a release candidate.</li>
 </ul></li>
 </ul>
+</body>
+</html>
