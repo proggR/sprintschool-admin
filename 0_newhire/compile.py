@@ -33,7 +33,7 @@ for folder in folders:
         dst = f'build/{folder}_{html_file}'
         links.append(f'<li><a href="./{folder}_{html_file}">{folder}_{html_file}</a></li>')
         # Copy the .html file to the build folder
-        shutil.copy(src, dst)
+        shutil.move(src, dst)
 
 if len(sys.argv) > 1:
     sys.exit()

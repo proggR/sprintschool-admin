@@ -5,11 +5,80 @@
 - with instead 15% in the age range and 1% interested, that becomes 105, requiring 11.4% penetration
 - **This person might also have a strong interest in personal development and self-improvement. They may enjoy reading books and articles on productivity, personal finance, and self-help. They might also enjoy fitness and outdoor activities as they balance their time and energy between work and leisure.**
 
+## Inspiration
+> I might get your song played on the radio station, cause I slay
+> I might get your song played on the radio station, cause I slay
+> You just might be a black Bill Gates in the making, cause I slay
+> I just might be a black Bill Gates in the making
+
 # Possible Go-To-Market Waterfall
 - start a FB and buy well targeted ads blanketing anyone in the idealized demo with multiple campaigns targeting multiple personas. challenge: aim to keep campaign spends cheap but high impression counts.
 - start a FB campaign from DEIT promoting the service and share it from personal to get the ball rolling. might actually have some okay lead gen from that direction, or maybe some reachouts that help find new angles
 - start 2 Twitter accounts, a male and a female, both being bi, that promotes the service. aim to be funny/have characters.
 
+
+## Local Tech Oriented Shops
+
+### Quinte Mall
+- Staples
+- The Source
+- Game Stop
+- Mind Games
+- Mobile Klinik
+- Telus
+- Fido
+- Virgin Plus
+- Koodo
+- Freedom Mobile
+- Rogers
+- T-Booth
+- Wireless Wave
+- Best Buy Mobile
+- Sunrise Records
+- Chapters
+- Cineplex
+
+### Other
+- Long & McQuade (Belleville)
+- Japan Camera (Belleville)
+- Best Buy/Geek Squad (Belleville)
+- GameStop (Trenton)
+- Fido (Trenton)
+- Bell (Trenton)
+- Rogers (Trenton)
+- Geek Shack (Trenton)
+
+## Local Training/Employment Services
+- [Agilec](https://agilec.ca/)
+- Drake
+- CareerEdge
+- PeopleReady
+- [Youthab](https://www.youthab.ca/)
+
+
+## Research
+
+### Youtube
+
+- similar metadata (< tag all content with the same tags)
+- retargeting
+
+### Email
+- Email 1: Introduce & Engage
+- Email 2: Share Key insights
+- Email 3: Reveal Your Solution
+- Email 4: Overcome Objections
+- Email 5: Final Pitch
+
+### Other
+
+- Joint Venter (< smart...who?)
+- pitch video email (<interesting)
+- "engineer a familiar surprise"
+- "to sell something familiar you have to do something surprising, and to sell something surprising you have to do something familiar"
+- "not selling information, you're selling transformation"
+- "where there's overwhelm, there's opportunity"
+- 
 
 ## ChatGPT
 
